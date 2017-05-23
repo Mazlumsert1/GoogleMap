@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Map API </title></head>
+<body>
+<div id="map" style="height:680px; width: 100%;"></div>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrxdWUY39Nqq1Kg-5BAS6UkYEVrs4Tw_U&callback=initMap"></script>
+<script type="text/javascript">
+    function initMap() {
+    var locations = [[41.015137, 28.97953], [37.87135, 32.48464],];
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: new google.maps.LatLng(41.015137, 28.979530),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    var infowindow = new google.maps.InfoWindow();
+    var marker, i;
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({position: new google.maps.LatLng(locations[i][1], locations[i][2]), map: map});
+    }
+}</script>
+</body>
+</html>
